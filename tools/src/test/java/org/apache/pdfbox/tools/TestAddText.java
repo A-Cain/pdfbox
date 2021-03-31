@@ -9,6 +9,7 @@ import junit.framework.TestSuite;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.pdfbox.tools.AddImage;
@@ -32,33 +33,38 @@ public class TestAddText extends TestCase
     }
 
     @Test
-    public void testWriteText()
+    public void testAnnotateText() throws IOException
     {
         AddText add = new AddText();
         
         String path = "../tools/src/main/java/org/apache/pdfbox/tools/AddTextResources/examplePDFWithText.pdf";
 
-        try
-        {
-            PDDocument actual = add.loadFileandInitializeStream(path);
+        PDDocument actual = add.loadFileandInitializeStream(path);
 
-            PDFTextStripper stripper = new PDFTextStripper();
-            String key = stripper.getText(actual);
-            
-            String str = add.writeText("annotation");
+        PDFTextStripper stripper = new PDFTextStripper();
+        String key = stripper.getText(actual);
+        
+        String str = add.annotateText(" annotation");
 
-            key = key + "annotation";
+        String expected = key + " annotation";
 
-            key = key.replace("\n", "").replace("\r", "");
+        expected = expected.replace("\n", "").replace("\r", "");
 
-            actual.close();
+        Boolean result = str.equals(expected);
 
-            assertTrue(str.equals(key));
-        }
-        catch (IOException e)
-        {
-            assertEquals(1, 0);
-        }
+        key = key.replace("\n", "").replace("\r", "");
+
+        add.writeText(0, key, PDType1Font.HELVETICA, 12);
+
+        actual.close();
+
+        assertTrue(result);
+
+    }
+
+    @Test
+    public void testWriteText()
+    {
 
     }
 }
