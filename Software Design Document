@@ -47,6 +47,7 @@ The user shall be able to choose a page to place the image on. More pages shall 
 
 To achieve these requirements, the team will create "tool" classes with accompanying tests. Each tool will provide utility that serves to fulfill one or more of these requirements. 
 Each tool class will have accompanying test classes in the tests folder. 
+If a test class requires resources (a file to modify), both that and the output of the test will be found in a [class]Resources folder in the tools directory.
 
 
 
