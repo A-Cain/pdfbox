@@ -28,8 +28,3 @@ The team uses IntelliJ and Eclipse. The PDFBox project is forked from the Apache
 
 To achieve these requirements, the team creates "tool" classes with accompanying tests. Each tool provides utility that serves to fulfill one or more of the requirements. 
 Each tool class has accompanying test classes in the tests folder. 
-
-
-
-
-
