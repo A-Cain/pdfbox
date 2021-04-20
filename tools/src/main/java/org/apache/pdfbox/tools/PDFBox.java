@@ -47,8 +47,14 @@ public final class PDFBox
             boolean exitAfterCallingMain = true;
             switch (command)
             {
+                case "AddImage":
+                    AddImage.main(arguments);
+                    break;
                 case "Decrypt":
                     Decrypt.main(arguments);
+                    break;
+                case "Draw Line":
+                    DrawLine.main(args);
                     break;
                 case "Encrypt":
                     Encrypt.main(arguments);
@@ -108,6 +114,7 @@ public final class PDFBox
         String message = "PDFBox version: \""+ Version.getVersion()+ "\""
                 + "\nUsage: java -jar pdfbox-app-x.y.z.jar <command> <args..>\n"
                 + "\nPossible commands are:\n"
+                + "  AddImage\n"
                 + "  Decrypt\n"
                 + "  Encrypt\n"
                 + "  ExtractText\n"
