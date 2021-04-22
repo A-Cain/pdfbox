@@ -6,11 +6,14 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.junit.Test;
+
 import java.util.Scanner;
 
 public class MultiFontTest {
-    //using the folder to store the PDF file in for now. Changed the location of the file
+// this function will create PDF file with Courier text for purposes of test.
     public static final String CREATED_PDF = "tools/src/main/java/org/apache/pdfbox/tools/FontResources/Courier.pdf";
+    @Test
     public static void main(String[] args) {
         try {
             Scanner myObj = new Scanner(System.in);
