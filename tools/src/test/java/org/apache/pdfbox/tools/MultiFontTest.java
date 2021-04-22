@@ -1,12 +1,15 @@
 package org.apache.pdfbox.tools;
 
 import java.awt.Color;
+import java.io.File;
 import java.io.IOException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.junit.Test;
+import static org.junit.Assert.assertTrue;
+
 
 import java.util.Scanner;
 
@@ -14,7 +17,7 @@ public class MultiFontTest {
 // this function will create PDF file with Courier text for purposes of test.
     public static final String CREATED_PDF = "tools/src/main/java/org/apache/pdfbox/tools/FontResources/Courier.pdf";
     @Test
-    public static void main(String[] args) {
+    public void CourierTest () {
         try {
             Scanner myObj = new Scanner(System.in);
             PDDocument pdfDoc = new PDDocument();
@@ -41,5 +44,8 @@ public class MultiFontTest {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        File testFile = new File ("tools/src/main/java/org/apache/pdfbox/tools/FontResources/Courier.pdf");
+        assertTrue(testFile.exists());
     }
+
 }
