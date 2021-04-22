@@ -38,7 +38,7 @@ public class AddText
         return doc;
     }
 
-    public String annotateText(String annotation) throws IOException
+    public String annotateText(String annotation, int a_page) throws IOException
     {
         COSDocument doc = documentToWrite.getDocument();
 
@@ -47,13 +47,15 @@ public class AddText
         if (!doc.isEncrypted()) {
             
             PDFTextStripper stripper = new PDFTextStripper();
+            stripper.setStartPage(a_page+1);
+            stripper.setEndPage(a_page+1);
             key = stripper.getText(documentToWrite);
 
             key += annotation;
 
             key = key.replace("\n", "").replace("\r", "");
 
-            PDPage page = documentToWrite.getPage(0);
+            PDPage page = documentToWrite.getPage(a_page);
 
             PDPageContentStream content_stream = new PDPageContentStream(documentToWrite, page, PDPageContentStream.AppendMode.OVERWRITE, true);
             
