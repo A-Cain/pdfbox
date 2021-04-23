@@ -1,0 +1,34 @@
+Software Design Document.
+PDFBox known issues and fixes.
+
+Written By: Wright State University CEG-4110-01 Group 6. Assigned to Ahmed Alsaedi as Task.
+
+1 Introduction
+This document describes the design of "PDFBox know issues and fixes" project and includes new class creation as well as class documentation and tests.
+
+System Overview
+PDFBox is PDF document creation Java tool by Apache. PDFBox is an open source project with over 580 forks in GitHub. The project comes with various known issues and improvement opportunities.
+
+2. Design Considerations
+The issues that are being addressed in this design are know project issues centered around text format, fonts, image import and export etc.
+Currently the PDFBox project contains a number of tool classes that each perform a specific task. We shall create more of these tool classes in order to fulfill the requirements.
+
+3. Assumption and Dependencies:
+This project depends on the existing PDFBox library and creates new classes to fillful the requirements stated within The Software Requirements Specification document in teh same GiHub repository as this document.
+
+4. General Constraints:
+The original PDFBox project is broad and has many know issues. Creating new classes that will work with existing library can be challenging.
+
+5. Goals and Guidelines:
+- Fulfill the project requirements
+- maintain the original project integrity
+- keep up the new customer requirements without creating any new problems.
+
+6. Development Methods:
+The team uses IntelliJ and Eclipse. The PDFBox project is forked from the Apache project in GitHub Repository, and each team member clones the forked repository. Each team member builds the cloned project and adds classes based on the requirements. Once a requirement is fulfilled, the version of the project is pushed to GitHub, and a pull request is created and assigned for a Team member to review and approve. Team members cannot approve their own pull requests.
+
+To achieve these requirements, the team creates "tool" classes with accompanying tests that demonstrate that they are fulfilling their tasks. 
+A tool shall be a java class file that, when its main method is run, performs some task such that it fulfills or contributes to fulfilling a requirement. 
+For example: A tool class titled "AddImage" would have to fulfill Req 4.0.
+Each tool class has accompanying test classes in the tests folder. Any files or other resources required by the tool shall be found in the tool's own resources folder, which will be located in the tools directory.
+A tool's tests should demonstrate that it fulfills or contributes to fulfilling a requirement by producing a file or some other type of evidence.
