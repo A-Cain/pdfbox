@@ -1,13 +1,14 @@
 package org.apache.pdfbox.tools;
 
 import java.awt.Color;
-import java.io.File;
 import java.io.IOException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 
@@ -44,8 +45,7 @@ public class MultiFontTest {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        File testFile = new File ("tools/src/main/java/org/apache/pdfbox/tools/FontResources/Courier.pdf");
-        assertTrue(testFile.exists());
+        assertFalse(CREATED_PDF.isEmpty());
     }
 
 }
