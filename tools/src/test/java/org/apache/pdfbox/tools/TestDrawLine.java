@@ -9,9 +9,11 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-//Test class for the DrawLine class
+//Test class for the DrawLine class and should prove that Reqs 3.0 and 3.1 have been met
 public class TestDrawLine {
-@Test
+//This test is for troubleshooting purposes, testing the ability to check if more pages need to be added and doing so if necessary
+//Relevant to Req 3.1
+    @Test
     public void testLoadDocumentAndPageCheck() throws IOException {
     DrawLine draw = new DrawLine();
     PDDocument actual = draw.loadDocument("../tools/src/main/java/org/apache/pdfbox/tools/DrawLineResources/examplePDFWithText.pdf", 2);
@@ -19,6 +21,7 @@ public class TestDrawLine {
     //this also tests that the pageCheck properly adds pages
 }
 //this test draws a line on the second page of a PDF with test, after addding the second page
+//Relevant to fulfilling Reqs 3.0 and 3.1
 @Test
     public void testDrawLine() throws IOException {
     DrawLine draw = new DrawLine();
@@ -29,6 +32,7 @@ public class TestDrawLine {
 }
 
 //This test will draw a line on the second page of a blank pdf, after adding said second page
+//Relevant to fulfilling Reqs 3.0 and 3.1
     @Test
     public void testDrawLineBlank() throws IOException {
         DrawLine draw = new DrawLine();
@@ -38,6 +42,7 @@ public class TestDrawLine {
         assertTrue(output.exists()); //must manually check output file for line
     }
 //this test draws a line on the middle page of a blank PDF with 3 pages
+//Relevant to fulfilling Reqs 3.0 and 3.1
     @Test
     public void testInsertMid() throws IOException {
         DrawLine draw = new DrawLine();
