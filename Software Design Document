@@ -30,5 +30,5 @@ The team uses IntelliJ and Eclipse. The PDFBox project is forked from the Apache
 To achieve these requirements, the team creates "tool" classes with accompanying tests that demonstrate that they are fulfilling their tasks. 
 A tool shall be a java class file that, when its main method is run, performs some task such that it fulfills or contributes to fulfilling a requirement. 
 For example: A tool class titled "AddImage" would have to fulfill Req 4.0.
-Each tool class has accompanying test classes in the tests folder. Any files or other resources required by the tool shall be found in the tool's own resources folder, which will be located in the tools directory.
+Each tool class has accompanying test classes in the tests folder. Any files or other resources required by the tool or its tests shall be found in the tool's own resources folder, which will be located in the tools directory.
 A tool's tests should demonstrate that it fulfills or contributes to fulfilling a requirement by producing a file or some other type of evidence.
